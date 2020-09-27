@@ -1,6 +1,6 @@
 import cv2
 
-video_file = '../img/big_buck.avi'
+video_file = '../img/video.avi'
 
 cap = cv2.VideoCapture(video_file)
 if cap.isOpened():
@@ -15,4 +15,4 @@ if cap.isOpened():
 else:
     print("Can't open video.")
 cap.release()
-cv2.destroyAllWindow()
+cv2.destroyAllWindows()
