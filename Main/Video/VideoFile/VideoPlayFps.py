@@ -1,5 +1,5 @@
 import cv2
-video_file = "../../../img/video.avi"
+video_file = "../../../video/video.avi"
 
 cap = cv2.VideoCapture(video_file)
 if cap.isOpened:
