@@ -1,5 +1,5 @@
 import cv2
-img = cv2.imread('../../img/blank_500.jpg')
+img = cv2.imread('../../../img/blank_500.jpg')
 cv2.line(img, (50, 50), (150, 50), (255, 0, 0))
 cv2.line(img, (200, 50), (350, 50), (0, 255, 0))
 cv2.line(img, (350, 50), (450, 50), (0, 255))

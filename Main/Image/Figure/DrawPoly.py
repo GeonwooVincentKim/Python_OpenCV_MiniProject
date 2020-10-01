@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('../../img/blank_500.jpg')
+img = cv2.imread('../../../img/blank_500.jpg')
 pts1 = np.array([[50, 50], [150, 150], [100, 140], [200, 240]], dtype=np.int32)
 pts2 = np.array([[350, 50], [250, 200], [450, 200]], dtype=np.int32)
 pts3 = np.array([[150, 300], [50, 450], [250, 450]], dtype=np.int32)
