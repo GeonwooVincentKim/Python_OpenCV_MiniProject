@@ -61,3 +61,25 @@ print(c.shape)
 
 print(d)
 print(d.shape)
+
+a = np.arange(5)
+print(a)
+print(a.dtype)
+print(a.shape)
+
+b = np.arange(5.0)
+print(b)
+print(b.dtype)
+
+c = np.arange(3, 9, 2)
+print(c)
+
+print(np.random.rand())
+print(np.random.randn())
+
+a = np.random.rand(2, 3)
+print(a)
+
+b = np.random.randn(2, 3)
+print(b)
+
