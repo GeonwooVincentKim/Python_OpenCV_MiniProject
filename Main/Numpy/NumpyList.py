@@ -21,3 +21,9 @@ a = np.empty((2, 3))
 print(a)
 print(a.dtype)
 
+a.fill(255)
+print(a)
+
+b = np.zeros((2, 3))
+print(b)
+print(b.dtype)
