@@ -1,4 +1,7 @@
+import cv2
 import numpy as np
+
+
 a = np.array([1, 2, 3, 4])
 print(a)
 print(a.dtype)
@@ -27,3 +30,15 @@ print(a)
 b = np.zeros((2, 3))
 print(b)
 print(b.dtype)
+
+c = np.zeros((2, 3), dtype=np.int8)
+print(c)
+
+d = np.ones((2, 3), dtype=np.int16)
+print(d)
+
+e = np.full((2, 3, 4), 255, dtype=np.uint8)
+print(e)
+
+img = cv2.imread('../../img/People.jpg')
+print(img)
