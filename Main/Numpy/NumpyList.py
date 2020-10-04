@@ -14,3 +14,10 @@ print(c.dtype)
 
 d = np.array([1, 2, 3, 4], dtype=np.float32)
 print(d)
+
+a = np.uint8([1, 2, 3, 4])
+print(a)
+a = np.empty((2, 3))
+print(a)
+print(a.dtype)
+
