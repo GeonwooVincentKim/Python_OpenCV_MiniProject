@@ -19,7 +19,7 @@ print(a)
 b = a.reshape(2, 3)
 print(b)
 
-c = a.reshape(a, (2, 3))
+c = np.reshape(a, (2, 3))
 print(c)
 
 d = np.arange(100).reshape(2, -1)
@@ -27,3 +27,9 @@ print(d)
 
 e = np.arange(100).reshape(-1, 5)
 print(e, e.shape)
+
+f = np.zeros((2, 3))
+print(f, f.reshape((6, )), f.reshape(-1), np.ravel(f))
+
+g = np.arange(10).reshape(2, -1)
+print(g, g.T)
