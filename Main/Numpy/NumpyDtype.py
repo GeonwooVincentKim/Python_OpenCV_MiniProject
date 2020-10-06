@@ -111,3 +111,20 @@ print(bb)
 
 bb[0] = 99
 print(b)
+
+a = np.arange(5)
+print(a, a[[1, 3]])
+print(a[[True, False, True, False, True]])
+
+a = np.arange(10)
+print(a)
+
+b = a > 5
+print(b, a[b])
+
+a[a > 5] = 1
+print(a)
+
+b = np.arange(12).reshape(3, 4)
+print(b, b[[0, 2]])
+print(b[[0, 2], [2, 3]])
