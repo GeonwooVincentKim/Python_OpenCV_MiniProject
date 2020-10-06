@@ -67,4 +67,13 @@ print(a+b, a-b, a*b, a/b, a**b)
 
 a = np.ones((2, 3))
 b = np.ones((3, 2))
-print(a+b)
+# print(a+b)
+print(a)
+
+c = np.arange(3)
+print(c, a+c)
+
+d = np.arange(2)
+# print(a + d)
+
+
