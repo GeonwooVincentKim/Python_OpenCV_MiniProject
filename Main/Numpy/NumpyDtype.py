@@ -33,3 +33,14 @@ print(f, f.reshape((6, )), f.reshape(-1), np.ravel(f))
 
 g = np.arange(10).reshape(2, -1)
 print(g, g.T)
+
+myList = list(range(10))
+print(myList)
+
+for i in range(len(myList)):
+    myList[i] = myList[i] + 1
+print(myList)
+
+a = np.arange(10)
+print(a)
+print(a+1)
