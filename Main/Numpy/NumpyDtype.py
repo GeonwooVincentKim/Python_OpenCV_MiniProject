@@ -68,12 +68,46 @@ print(a+b, a-b, a*b, a/b, a**b)
 a = np.ones((2, 3))
 b = np.ones((3, 2))
 # print(a+b)
-print(a)
+print(a, b)
 
 c = np.arange(3)
 print(c, a+c)
 
 d = np.arange(2)
 # print(a + d)
+print(a, d)
 
+d = np.arange(2).reshape(2, 1)
+print(d)
+print(a + d)
 
+a = np.arange(10)
+print(a, a[5])
+
+b = np.arange(12).reshape(3, 4)
+print(b, b[1])
+
+print(a)
+a[5] = 9
+print(a, b)
+
+b[0] = 0
+print(b)
+
+b[1, 2] = 99
+print(b)
+
+a = np.arange(10)
+print(a, a[2:5], a[5:], a[:])
+
+b = np.arange(12).reshape(3, 4)
+print(b, b[0:2, 1], b[0:2, 1], b[0:2, 1:3], b[2, :], b[:, 1])
+
+b[0:2, 1:3] = 0
+print(b)
+
+bb = b[0:2, 1:3]
+print(bb)
+
+bb[0] = 99
+print(b)
