@@ -44,3 +44,27 @@ print(myList)
 a = np.arange(10)
 print(a)
 print(a+1)
+
+a = np.arange(5)
+print(a)
+print(a+5)
+print(a-2)
+print(a*2)
+print(a/2)
+print(a**2)
+
+b = np.arange(6).reshape(2, -1)
+print(b)
+print(b*2)
+
+print(a)
+print(a > 2)
+
+a = np.arange(10, 60, 10)
+b = np.arange(1, 6)
+print(a, b)
+print(a+b, a-b, a*b, a/b, a**b)
+
+a = np.ones((2, 3))
+b = np.ones((3, 2))
+print(a+b)
