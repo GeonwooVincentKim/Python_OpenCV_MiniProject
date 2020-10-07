@@ -137,3 +137,10 @@ b = np.arange(10, 14).reshape(2, 2)
 print(b)
 print(np.vstack((a, b)))
 print(np.hstack((a, b)))
+print(np.concatenate((a, b), 0))
+print(np.concetenate((a, b), 1))
+
+a = np.arange(12).reshape(4, 3)
+b = np.arange(10, 130, 10).reshape(4, 3)
+print(a, b)
+
