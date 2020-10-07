@@ -1,4 +1,5 @@
 import numpy as np
+
 a = np.arange(5)
 print(a, a.dtype)
 
@@ -29,7 +30,7 @@ e = np.arange(100).reshape(-1, 5)
 print(e, e.shape)
 
 f = np.zeros((2, 3))
-print(f, f.reshape((6, )), f.reshape(-1), np.ravel(f))
+print(f, f.reshape((6,)), f.reshape(-1), np.ravel(f))
 
 g = np.arange(10).reshape(2, -1)
 print(g, g.T)
@@ -43,19 +44,19 @@ print(myList)
 
 a = np.arange(10)
 print(a)
-print(a+1)
+print(a + 1)
 
 a = np.arange(5)
 print(a)
-print(a+5)
-print(a-2)
-print(a*2)
-print(a/2)
-print(a**2)
+print(a + 5)
+print(a - 2)
+print(a * 2)
+print(a / 2)
+print(a ** 2)
 
 b = np.arange(6).reshape(2, -1)
 print(b)
-print(b*2)
+print(b * 2)
 
 print(a)
 print(a > 2)
@@ -63,7 +64,7 @@ print(a > 2)
 a = np.arange(10, 60, 10)
 b = np.arange(1, 6)
 print(a, b)
-print(a+b, a-b, a*b, a/b, a**b)
+print(a + b, a - b, a * b, a / b, a ** b)
 
 a = np.ones((2, 3))
 b = np.ones((3, 2))
@@ -71,7 +72,7 @@ b = np.ones((3, 2))
 print(a, b)
 
 c = np.arange(3)
-print(c, a+c)
+print(c, a + c)
 
 d = np.arange(2)
 # print(a + d)
@@ -128,3 +129,11 @@ print(a)
 b = np.arange(12).reshape(3, 4)
 print(b, b[[0, 2]])
 print(b[[0, 2], [2, 3]])
+
+a = np.arange(4).reshape(2, 2)
+print(a)
+
+b = np.arange(10, 14).reshape(2, 2)
+print(b)
+print(np.vstack((a, b)))
+print(np.hstack((a, b)))
