@@ -138,9 +138,20 @@ print(b)
 print(np.vstack((a, b)))
 print(np.hstack((a, b)))
 print(np.concatenate((a, b), 0))
-print(np.concetenate((a, b), 1))
+print(np.concatenate((a, b), 1))
 
 a = np.arange(12).reshape(4, 3)
 b = np.arange(10, 130, 10).reshape(4, 3)
 print(a, b)
 
+c = np.stack((a, b), 0)
+print(c.shape, c)
+
+d = np.stack((a, b), 1)
+print(d.shape, d)
+
+e = np.stack((a, b), 2)
+print(e.shape, e)
+
+ee = np.stack((a, b), -1)
+print(ee.shape)
