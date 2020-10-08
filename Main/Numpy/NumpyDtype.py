@@ -187,3 +187,15 @@ coords = np.where(b > 6)
 print(coords)
 
 print(np.stack((coords[0], coords[1]), -1))
+
+z = np.array([0, 1, 2, 0, 1, 2])
+print(np.nonzero(z))
+
+zz = np.array([0, 1, 2], [1, 2, 0], [2, 0, 1])
+print(zz)
+
+coords = np.nonzero(zz)
+print(coords)
+print(np.stack((coords[0], coords[1]), -1))
+
+
