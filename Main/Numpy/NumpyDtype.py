@@ -155,3 +155,12 @@ print(e.shape, e)
 
 ee = np.stack((a, b), -1)
 print(ee.shape)
+
+a = np.arange(12)
+print(a)
+print(np.hsplit(a, 3))
+print(np.hsplit(a, [3, 6]))
+print(np.hsplit(a, [3, 6, 9]))
+print(np.split(a, 3, 0))
+print(np.split(a, [3, 6, 9], 0))
+
