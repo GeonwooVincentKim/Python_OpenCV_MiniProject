@@ -183,6 +183,7 @@ print(a)
 
 b = np.arange(12).reshape(3, 4)
 print(b)
+
 coords = np.where(b > 6)
 print(coords)
 
@@ -191,11 +192,28 @@ print(np.stack((coords[0], coords[1]), -1))
 z = np.array([0, 1, 2, 0, 1, 2])
 print(np.nonzero(z))
 
-zz = np.array([0, 1, 2], [1, 2, 0], [2, 0, 1])
+zz = np.array([[0, 1, 2], [1, 2, 0], [2, 0, 1]])
 print(zz)
 
 coords = np.nonzero(zz)
 print(coords)
 print(np.stack((coords[0], coords[1]), -1))
 
+print(a)
+print(np.nonzero(a > 15))
+print(np.where(a > 15))
 
+print(b)
+print(np.nonzero(b > 6))
+print(np.where(b > 6))
+
+t = np.array([True, True, True])
+print(np.all(t))
+t[1] = False
+print(t)
+print(np.all(t))
+
+tt = np.array([[True, True], [False, True], [True, True]])
+print(tt)
+print(np.all(tt, 0))
+print(np.all(tt, 1))
