@@ -170,3 +170,13 @@ print(np.vsplit(b, 2))
 print(np.split(b, 2, 0))
 print(np.hsplit(b, [1]))
 print(np.split(b, [1], 1))
+
+a = np.arange(10, 20)
+print(a)
+print(np.where(a > 15))
+print(np.where(a > 15, 1, 0))
+print(a)
+
+print(np.where(a > 15, 99, a))
+print(np.where(a > 15, a, 0))
+print(a)
