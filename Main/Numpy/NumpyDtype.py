@@ -173,6 +173,7 @@ print(np.split(b, [1], 1))
 
 a = np.arange(10, 20)
 print(a)
+
 print(np.where(a > 15))
 print(np.where(a > 15, 1, 0))
 print(a)
