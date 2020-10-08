@@ -180,3 +180,10 @@ print(a)
 print(np.where(a > 15, 99, a))
 print(np.where(a > 15, a, 0))
 print(a)
+
+b = np.arange(12).reshape(3, 4)
+print(b)
+coords = np.where(b > 6)
+print(coords)
+
+print(np.stack((coords[0], coords[1]), -1))
