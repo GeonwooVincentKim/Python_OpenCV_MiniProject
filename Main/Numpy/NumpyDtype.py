@@ -218,3 +218,14 @@ tt = np.array([[True, True], [False, True], [True, True]])
 print(tt)
 print(np.all(tt, 0))
 print(np.all(tt, 1))
+
+a = np.arange(10)
+b = np.arange(10)
+print(a, b, a == b)
+print(np.all(a == b))
+
+b[5] = -1
+print(a, b)
+print(np.all(a == b))
+print(np.where(a == b))
+print(np.where(a != b))
