@@ -229,3 +229,17 @@ print(a, b)
 print(np.all(a == b))
 print(np.where(a == b))
 print(np.where(a != b))
+
+a = np.arange(12).reshape(3, 4)
+print(a, np.sum(a))
+print(np.sum(a, 0), np.sum(a, 1))
+
+print(np.mean(a))
+print(np.mean(a, 0), np.mean(a, 1))
+
+print(np.amin(a))
+print(np.amin(a, 0), np.amin(a, 1))
+
+print(np.amax(a), np.amax(a, 0), np.amax(a, 1))
+print(np.amin is np.min)
+print(np.max is np.max)
