@@ -8,7 +8,7 @@ w = h = 50
 roi = img[y:y+h, x:x+w]
 img2 = roi.copy()
 
-img[y:y+h , x+x:x+w+w] = roi
+img[y:y+h, x+w:x+w+w] = roi
 cv2.rectangle(img, (x, y), (x+w+w, y+h), (0, 255, 0))
 
 cv2.imshow("img", img)
