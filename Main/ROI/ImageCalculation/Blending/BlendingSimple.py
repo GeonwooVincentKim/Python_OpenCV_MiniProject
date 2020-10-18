@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-img1 = cv2.imread('../../../img/wing_wall.jpg')
-img2 = cv2.imread('../../../img/yate.jpg')
+img1 = cv2.imread('../../../../img/wing_wall.jpg')
+img2 = cv2.imread('../../../../img/yate.jpg')
 
 img3 = img1 + img2
 img4 = cv2.add(img1, img2)
