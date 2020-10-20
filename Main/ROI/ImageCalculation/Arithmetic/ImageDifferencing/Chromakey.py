@@ -9,7 +9,7 @@ img2 = cv2.imread('../../../../../img/street.jpg')
 height1, width1 = img1.shape[:2]
 height2, width2 = img2.shape[:2]
 
-x = (width2 - width1) / 2
+x = (width2 - width1) // 2
 y = height2 - height1
 w = x + width1
 h = y + height1
