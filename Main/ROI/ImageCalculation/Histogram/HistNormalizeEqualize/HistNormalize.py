@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-img = cv2.imread('../../../../img/abnormal.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('../../../../../img/abnormal.jpg', cv2.IMREAD_GRAYSCALE)
 img_f = img.astype(np.float32)
 
 img_norm = ((img_f - img_f.min()) * (255) / (img_f.max() - img_f.min()))
