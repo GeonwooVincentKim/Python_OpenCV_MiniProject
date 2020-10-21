@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-img = cv2.imread('../../../../img/yate.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('../../../../../img/yate.jpg', cv2.IMREAD_GRAYSCALE)
 rows, cols = img.shape[:2]
 
 hist = cv2.calcHist([img], [0], None, [256], [0, 256])
