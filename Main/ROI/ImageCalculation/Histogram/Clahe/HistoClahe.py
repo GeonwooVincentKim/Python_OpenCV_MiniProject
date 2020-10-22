@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-img = cv2.imread('../../../../img/People.jpg')
+img = cv2.imread('../../../../../img/People.jpg')
 img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
 
 img_eq = img_yuv.copy()
