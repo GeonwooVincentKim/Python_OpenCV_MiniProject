@@ -22,3 +22,8 @@ for i, img in enumerate(imgs):
     cv2.normalize(hist, hist, 0, 1, cv2.NORM_MINMAX)
     hists.append(hist)
 
+query = hists[0]
+methods = {'CORREL': cv2.HISTCMP_CORREL, 'CHISQR': cv2.HISTCMP_CHISQR,
+           'INTERSECT': cv2.HISTCMP_INTERSECT,
+           'BHATTACHARYYA': cv2.HISTCMP_BHATTACHARYYA}
+
