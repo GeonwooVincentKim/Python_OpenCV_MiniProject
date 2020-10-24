@@ -27,3 +27,13 @@ methods = {'CORREL': cv2.HISTCMP_CORREL, 'CHISQR': cv2.HISTCMP_CHISQR,
            'INTERSECT': cv2.HISTCMP_INTERSECT,
            'BHATTACHARYYA': cv2.HISTCMP_BHATTACHARYYA}
 
+for j, (name, flag) in enumerate(methods.items()):
+    print("% - 10s" % name, end="\t")
+
+    for i, (hist, img) in enumerate(zip(hists, imgs)):
+        ret = cv2.compareHist(query, hist, flag)
+        if flag == cv2.HISTCMP_INTERSECT:
+            ret = ret / np.sum(query)
+        print("img%d: %7.2f" % (i + 1, ret), end="\t")
+    print()
+plt.show()
