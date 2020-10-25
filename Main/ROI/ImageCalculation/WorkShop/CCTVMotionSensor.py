@@ -50,5 +50,7 @@ if cap.isOpened():
         a = b
         b = c
 
+        # When KeyCode equals to ESC(0xFF),
+        # then Shutdown(Escape) program.
         if cv2.waitKey(1) & 0xFF == 27:
             break
