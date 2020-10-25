@@ -10,7 +10,7 @@ img_skull = cv2.imread('../../../../img/skull.jpg')
 img_comp = np.zeros_like(img_face)
 
 height, width = img_face.shape[:2]
-middle = width / 2
+middle = width // 2
 alpha_width = width * alpha_width_rate // 100
 start = middle - alpha_width // 2
 step = 100 / alpha_width
