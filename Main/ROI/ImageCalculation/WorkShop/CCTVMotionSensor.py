@@ -32,4 +32,14 @@ if cap.isOpened():
 
         diff = cv2.bitwise_and(diff1_t, diff2_t)
 
+        k = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3))
+        diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, k)
 
+        diff_cnt = cv2.countNonZero(diff)
+        if diff_cnt > max_diff:
+            nzero = np.nonzero(diff)
+            cv2.rectangle(draw, (min(nzero[1]), min(nzero[0])),
+                          (max(nzero[1]), max(nzero[0])),
+                          (0, 255, 0), 2)
+            cv2.putText(draw, "Motion Detected", (10, 30),
+                        cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 0, 255))
