@@ -43,3 +43,12 @@ if cap.isOpened():
                           (0, 255, 0), 2)
             cv2.putText(draw, "Motion Detected", (10, 30),
                         cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 0, 255))
+
+        stacked = np.hstack((draw, cv2.cvtColor(diff, cv2.COLOR_GRAY2BGR)))
+        cv2.imshow('motion sensor', stacked)
+
+        a = b
+        b = c
+
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
