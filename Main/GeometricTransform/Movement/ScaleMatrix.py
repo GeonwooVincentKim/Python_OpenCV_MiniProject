@@ -16,4 +16,9 @@ dst1 = cv2.warpAffine(img, m_small,
 dst2 = cv2.warpAffine(img, m_big,
                       (int(height * 2),
                        (int(width * 2))))
-
+dst3 = cv2.warpAffine(img, m_small,
+                      (int(height * 0.5),
+                       (int(width * 0.5))))
+dst4 = cv2.warpAffine(img, m_big,
+                      (int(height * 2),
+                       (int(width * 2))))
