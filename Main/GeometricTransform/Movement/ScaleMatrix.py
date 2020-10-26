@@ -27,3 +27,11 @@ dst4 = cv2.warpAffine(img, m_big,
                       (int(height * 2),
                        (int(width * 2)),
                        (None, cv2.INTER_CUBIC)))
+
+cv2.imshow('original', img)
+cv2.imshow('small', dst1)
+cv2.imshow('big', dst2)
+cv2.imshow('small INTER_AREA', dst3)
+cv2.imshow('big INTER_CUBIC', dst4)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
