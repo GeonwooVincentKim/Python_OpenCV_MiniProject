@@ -5,7 +5,7 @@ import numpy as np
 img = cv2.imread('../../../img/fish.jpg')
 rows, cols = img.shape[0: 2]
 
-dx, dy = 100, 50
+dx, dy = 200, 0
 
 mtrx = np.float32([[1, 0, dx],
                    [0, 1, dy]])
