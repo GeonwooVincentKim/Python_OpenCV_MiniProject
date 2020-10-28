@@ -15,3 +15,9 @@ m90 = np.float32([[np.cos(d90), -1 * np.sin(d90), rows],
 
 r45 = cv2.warpAffine(img, m45, (cols, rows))
 r90 = cv2.warpAffine(img, m90, (rows, cols))
+
+cv2.imshow('origin', img)
+cv2.imshow('45', r45)
+cv2.imshow('90', r90)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
