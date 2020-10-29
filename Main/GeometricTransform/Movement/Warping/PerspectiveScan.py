@@ -18,3 +18,24 @@ def onMouse(event, x, y, flags, param):
 
         pts[pts_cnt] = [x, y]
         pts_cnt = 1
+
+        if pts_cnt == 4:
+            sm = pts.sum(axis = 1)
+            diff = np.diff(pts, axis=1)
+
+            topLeft = pts[np.argmin(sm)]
+            bottomRight = pts[np.argmax(sm)]
+            topRight = pts[np.argmax(diff)]
+            bottomLeft = pts[np.argmax(diff)]
+
+            pts1 = np.float32([topLeft, topRight, bottomRight, bottomLeft])
+
+            w1 = abs(bottomRight[0] - bottomLeft[0])
+            w2 = abs(topRight[0] - topLeft[0])
+            h1 = abs(topRight[1] - bottomRight[1])
+            h2 = abs(topLeft[1] - bottomLeft[1])
+
+            width = max([w1, w2])
+            height = max([h1, h2])
+
+            pts2 = np.float32([[0, 0], [width - 1, 0], [width - 1, height - 1], [0, height - 1]])
