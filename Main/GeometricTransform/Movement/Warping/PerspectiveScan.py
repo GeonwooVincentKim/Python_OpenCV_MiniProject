@@ -4,6 +4,7 @@ import numpy as np
 
 win_name = "scanning"
 img = cv2.imread('../../../../img/paper.jpg')
+
 rows, cols = img.shape[:2]
 draw = img.copy()
 pts_cnt = 0
@@ -39,3 +40,12 @@ def onMouse(event, x, y, flags, param):
             height = max([h1, h2])
 
             pts2 = np.float32([[0, 0], [width - 1, 0], [width - 1, height - 1], [0, height - 1]])
+
+            mtrx = cv2.getPerspectiveTransform(pts1, pts2)
+            result = cv2.warpPerspective(img, mtrx, (width, height))
+
+            cv2.imshow('scanned', result)
+            cv2.imshow(win_name, img)
+            cv2.setMouseCallback(win_name, onMouse)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
