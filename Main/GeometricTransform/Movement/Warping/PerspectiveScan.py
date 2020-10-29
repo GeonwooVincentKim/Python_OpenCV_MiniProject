@@ -45,7 +45,9 @@ def onMouse(event, x, y, flags, param):
             result = cv2.warpPerspective(img, mtrx, (width, height))
 
             cv2.imshow('scanned', result)
-            cv2.imshow(win_name, img)
-            cv2.setMouseCallback(win_name, onMouse)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+
+
+cv2.imshow(win_name, img)
+cv2.setMouseCallback(win_name, onMouse)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
