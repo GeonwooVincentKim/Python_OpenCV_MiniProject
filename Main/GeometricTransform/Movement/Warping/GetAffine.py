@@ -15,7 +15,7 @@ cv2.circle(img, (200, 50), 5, (0, 255, 0), -1)
 cv2.circle(img, (100, 200), 5, (0, 0, 255), -1)
 
 mtrx = cv2.getAffineTransform(pts1, pts2)
-dst = cv2.warpAffine(img, mtrx, (int(cols * 1.5), rows()))
+dst = cv2.warpAffine(img, mtrx, (int(cols * 1.5), rows))
 
 cv2.imshow('origin', img)
 cv2.imshow('affin', dst)
