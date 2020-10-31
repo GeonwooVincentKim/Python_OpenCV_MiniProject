@@ -9,4 +9,10 @@ rows, cols = img.shape[:2]
 
 mapY, mapX = np.indices((rows, cols), dtype=np.float32)
 sinX = mapX + amp * np.sin(mapY / l)
-sinY = mapY + amp * np.sin(mapX / l)
+cosY = mapY + amp * np.sin(mapX / l)
+
+img_sinX = cv2.remap(img, sinX, mapY, cv2.INTER_LINEAR)
+img_cosY = cv2.remap(img, mapX, cosY, cv2.INTER_LINEAR)
+img_both = cv2.remap(img, sinX, cosY, cv2.INTER_LINEAR,
+                     None, cv2.BORDER_REPLICATE)
+
