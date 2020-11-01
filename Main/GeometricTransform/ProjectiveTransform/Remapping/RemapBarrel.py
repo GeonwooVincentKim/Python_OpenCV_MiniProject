@@ -20,3 +20,8 @@ mapX = ((mapX + 1) * cols - 1) / 2
 mapY = ((mapY + 1) * rows - 1) / 2
 
 distorted = cv2.remap(img, mapX, mapY, cv2.INTER_LINEAR)
+
+cv2.imshow('origin', img)
+cv2.imshow('distorted', distorted)
+cv2.waitKey()
+cv2.destroyAllWindows()
