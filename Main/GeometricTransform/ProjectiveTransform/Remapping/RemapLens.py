@@ -15,3 +15,10 @@ mapY = 2 * mapY / (rows - 1) - 1
 
 r = theta = cv2.cartToPolar(mapX, mapY)
 r[r < scale] = r[r < scale] ** exp
+
+distorted = cv2.remap(img, mapX, mapY, cv2.INTER_LINEAR)
+
+cv2.imshow('origin', img)
+cv2.imshow('distorted', distorted)
+cv2.waitKey()
+cv2.destroyAllWindows()
