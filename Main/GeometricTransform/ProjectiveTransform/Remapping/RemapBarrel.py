@@ -13,3 +13,10 @@ mapX = 2 * mapX / (cols - 1) - 1
 mapY = 2 * mapY / (rows - 1) - 1
 r, theta = cv2.cartToPolar(mapX, mapY)
 
+ru = r * (1 + k1 * (r ** 2) + k2 * (r ** 4), k3 * (r ** 6))
+
+mapX = mapY = cv2.polarToCart(ru, theta)
+mapX = ((mapX + 1) * cols - 1) / 2
+mapY = ((mapY + 1) * rows - 1) / 2
+
+distorted = cv2.remap(img, mapX, mapY, cv2.INTER_LINEAR)
