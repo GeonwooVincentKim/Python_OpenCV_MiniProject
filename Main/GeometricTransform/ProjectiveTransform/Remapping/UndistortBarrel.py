@@ -18,3 +18,8 @@ camMatrix = np.float32([[fx, 0, cx,
                          0, fy, cy],
                         [0, 0, 1]])
 
+dst = cv2.undistort(img, camMatrix, distCoeff)
+cv2.imshow("original", img)
+cv2.imshow("dst", dst)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
