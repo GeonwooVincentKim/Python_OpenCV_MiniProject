@@ -8,7 +8,7 @@ rows, cols = img.shape[:2]
 exp = 0.5
 scale = 1
 
-mapY, mapX = np.incides((rows, cols), dtype=np.float32)
+mapY, mapX = np.indices((rows, cols), dtype=np.float32)
 
 mapX = 2 * mapX / (cols - 1) - 1
 mapY = 2 * mapY / (rows - 1) - 1
