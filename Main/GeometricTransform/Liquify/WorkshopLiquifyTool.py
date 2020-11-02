@@ -62,3 +62,13 @@ def onMouse(event, x, y, flags, param):
             )
             cv2.imshow(win_title, img_draw)
 
+        elif event == cv2.EVENT_LBUTTONDOWN:
+            isDragging = True
+            cx1, cy1 = x, y
+
+        elif event == cv2.EVENT_LBUTTONUP:
+            if isDragging:
+                isDragging = False
+                liquify(img, cx1, cy1, x, y)
+                cv2.imshow(win_title, img)
+
