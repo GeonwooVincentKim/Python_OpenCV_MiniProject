@@ -4,7 +4,7 @@ import numpy as np
 
 win_title = "Liquify"
 half = 50
-isDraggin = False
+isDragging = False
 
 
 def liquify(img, cx1, cy1, cx2, cy2):
@@ -46,4 +46,19 @@ def liquify(img, cx1, cy1, cx2, cy2):
 
     img[y: y + h, x: x + w] = out
     return img
+
+
+def onMouse(event, x, y, flags, param):
+    global cx1, cy1, isDragging, img
+
+    if event == cv2.EVENT_MOUSEMOVE:
+        if not isDragging:
+            img_draw = img.copy()
+            cv2.rectangle(
+                img_draw,
+                (x - half, y - half),
+                (x - half, y - half),
+                (0, 255, 0)
+            )
+            cv2.imshow(win_title, img_draw)
 
