@@ -30,6 +30,7 @@ def liquify(img, cx1, cy1, cx2, cy2):
             np.float32(tri1[i]),
             np.float32(tri2[i])
         )
+
         warped = cv2.warpAffine(
             roi.copy(),
             matrix,
@@ -38,6 +39,7 @@ def liquify(img, cx1, cy1, cx2, cy2):
             flags=cv2.INTER_LINEAR,
             borderMode=cv2.BORDER_REFLECT_101
         )
+
         mask = np.zeros((h, w), dtype=np.uint8)
         cv2.fillConvexPoly(
             mask,
@@ -73,15 +75,15 @@ def onMouse(event, x, y, flags, param):
             )
             cv2.imshow(win_title, img_draw)
 
-        elif event == cv2.EVENT_LBUTTONDOWN:
-            isDragging = True
-            cx1, cy1 = x, y
+    elif event == cv2.EVENT_LBUTTONDOWN:
+        isDragging = True
+        cx1, cy1 = x, y
 
-        elif event == cv2.EVENT_LBUTTONUP:
-            if isDragging:
-                isDragging = False
-                liquify(img, cx1, cy1, x, y)
-                cv2.imshow(win_title, img)
+    elif event == cv2.EVENT_LBUTTONUP:
+        if isDragging:
+            isDragging = False
+            liquify(img, cx1, cy1, x, y)
+            cv2.imshow(win_title, img)
 
 
 if __name__ == "__main__":
