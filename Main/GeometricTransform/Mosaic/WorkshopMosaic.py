@@ -13,7 +13,7 @@ while True:
         roi = cv2.resize(roi, (w // rate, h // rate))
 
         roi = cv2.resize(roi, (w, h), interpolation=cv2.INTER_AREA)
-        img[y: y + h, x: x + h] = roi
+        img[y: y + h, x: x + w] = roi
         cv2.imshow(win_title, img)
 
     else:
