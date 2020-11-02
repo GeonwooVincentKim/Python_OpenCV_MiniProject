@@ -40,8 +40,14 @@ def liquify(img, cx1, cy1, cx2, cy2):
             (255, 255, 255)
         )
 
-        warped = cv2.bitwise_and(warped, warped, mask=mask)
-        out = cv2.bitwise_and(out, out, mask=cv2.bitwise_not(mask))
+        warped = cv2.bitwise_and(
+            warped, warped,
+            mask=mask
+        )
+        out = cv2.bitwise_and(
+            out, out,
+            mask=cv2.bitwise_not(mask)
+        )
         out = out + warped
 
     img[y: y + h, x: x + w] = out
@@ -72,3 +78,18 @@ def onMouse(event, x, y, flags, param):
                 liquify(img, cx1, cy1, x, y)
                 cv2.imshow(win_title, img)
 
+
+if __name__ == "__main__":
+    img = cv2.imread('../../../img/man_face.jpg')
+    h, w = img.shape[:2]
+
+    cv2.namedWindow(win_title)
+    cv2.setMouseCallback(win_title, onMouse)
+    cv2.imshow(win_title, img)
+
+    while True:
+        key = cv2.waitKey(1)
+        if key & 0xFF == 27:
+            break
+
+    cv2.destroyAllWindows()
