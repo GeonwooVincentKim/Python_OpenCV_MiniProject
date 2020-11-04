@@ -38,4 +38,22 @@ map_concave_y = ((map_concave_y + 1) * rows - 1) / 2
 
 while True:
     ret, frame = cap.read()
+    mirror_h = cv2.remap(frame, map_mirror_h_x, map_mirror_h_y, cv2.INTER_LINEAR)
+    mirror_v = cv2.remap(frame, map_mirror_v_x, map_mirror_v_y, cv2.INTER_LINEAR)
 
+    wave = cv2.remap(frame, map_wave_x, map_wave_y, cv2.INTER_LINEAR,
+                     None, cv2.BORDER_REPLICATE)
+    convex = cv2.remap(frame, map_convex_x, map_convex_y, cv2.INTER_LINEAR)
+    concave = cv2.remap(frame, map_concave_x, map_concave_y, cv2.INTER_LINEAR)
+
+    r1 = np.hstack([frame, mirror_h, mirror_v])
+    r2 = np.hstack([wave, convex, concave])
+    merged = np.vstack((r1, r2))
+
+    cv2.imshow('distorted', merged)
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
+
+cap.release()
+cv2.destroyAllWindows()
