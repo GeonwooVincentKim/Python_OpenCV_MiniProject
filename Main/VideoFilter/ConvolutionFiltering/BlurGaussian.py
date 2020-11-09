@@ -15,3 +15,10 @@ blur2 = cv2.filter2D(img, -1, k2 * k2.T)
 
 blur3 = cv2.GaussianBlur(img, (3, 3), 0)
 
+print("k1: ", k1)
+print("k2: ", k2 * k2.T)
+
+merged = np.hstack((img, blur1, blur2, blur3))
+cv2.imshow("gaussian blur", merged)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
