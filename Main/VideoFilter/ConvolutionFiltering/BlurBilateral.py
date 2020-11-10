@@ -4,7 +4,10 @@ import numpy as np
 
 img = cv2.imread('../../../img/gaussian_noise.jpg')
 
+# Apply Gaussian-Filter.
 blur1 = cv2.GaussianBlur(img, (5, 5), 0)
+
+# Apply Bilateral-Filter.
 blur2 = cv2.bilateralFilter(img, 5, 75, 75)
 
 merged = np.hstack((img, blur2, blur2))
