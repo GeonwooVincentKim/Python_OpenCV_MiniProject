@@ -15,3 +15,8 @@ sobel_y = cv2.Sobel(img, -1, 0, 1, ksize=3)
 
 merged1 = np.hstack([[img, edge_gx, edge_gy, edge_gx + edge_gy]])
 merged2 = np.hstack((img, sobel_x, sobel_y, sobel_x + sobel_y))
+merged = np.vstack((merged1, merged2))
+
+cv2.imshow('sobel', merged)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
