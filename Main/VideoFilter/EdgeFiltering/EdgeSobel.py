@@ -12,3 +12,6 @@ edge_gy = cv2.filter2D(img, -1, gy_k)
 
 sobel_x = cv2.Sobel(img, -1, 1, 0, ksize=3)
 sobel_y = cv2.Sobel(img, -1, 0, 1, ksize=3)
+
+merged1 = np.hstack([[img, edge_gx, edge_gy, edge_gx + edge_gy]])
+merged2 = np.hstack((img, sobel_x, sobel_y, sobel_x + sobel_y))
