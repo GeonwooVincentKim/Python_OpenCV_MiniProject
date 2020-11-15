@@ -15,3 +15,5 @@ scharr_y = cv2.Scharr(img, -1, 0, 1)
 
 merged1 = np.hstack((img, edge_gx, edge_gy))
 merged2 = np.hstack((img, scharr_x, scharr_y))
+
+merged = np.vstack((merged1, merged2))
