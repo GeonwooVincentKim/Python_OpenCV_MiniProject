@@ -12,3 +12,6 @@ edge_gy = cv2.filter2D(img, -1, gy_k)
 
 scharr_x = cv2.Scharr(img, -1, 1, 0)
 scharr_y = cv2.Scharr(img, -1, 0, 1)
+
+merged1 = np.hstack((img, edge_gx, edge_gy))
+merged2 = np.hstack((img, scharr_x, scharr_y))
