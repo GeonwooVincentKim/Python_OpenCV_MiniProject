@@ -13,3 +13,7 @@ closing = cv2.morphologyEx(img2, cv2.MORPH_CLOSE, k)
 merged1 = np.hstack((img1, opening))
 merged2 = np.hstack((img2, closing))
 merged3 = np.vstack((merged1, merged2))
+
+cv2.imshow("Opening, Closing", merged3)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
