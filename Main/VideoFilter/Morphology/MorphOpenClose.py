@@ -9,3 +9,7 @@ k = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
 opening = cv2.morphologyEx(img1, cv2.MORPH_OPEN, k)
 closing = cv2.morphologyEx(img2, cv2.MORPH_CLOSE, k)
+
+merged1 = np.hstack((img1, opening))
+merged2 = np.hstack((img2, closing))
+merged3 = np.vstack((merged1, merged2))
