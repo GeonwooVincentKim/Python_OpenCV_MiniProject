@@ -10,3 +10,6 @@ while True:
     if w > 0 and h > 0:
         roi = img[y: y + h,  x: x + w]
         roi = cv2.blur(roi, (ksize, ksize))
+
+        img[y: y + h, x: x + w] = roi
+        cv2.imshow(win_title, img)
