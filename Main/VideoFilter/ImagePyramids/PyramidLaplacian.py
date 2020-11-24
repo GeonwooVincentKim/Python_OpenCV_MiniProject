@@ -10,3 +10,7 @@ bigger = cv2.pyrUp(smaller)
 laplacian = cv2.subtract(img, bigger)
 restored = bigger + laplacian
 merged = np.hstack((img, laplacian, bigger, restored))
+
+cv2.imshow("Laplacian Pyramid", merged)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
