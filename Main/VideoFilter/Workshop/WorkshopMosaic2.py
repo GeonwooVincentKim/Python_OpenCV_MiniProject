@@ -13,5 +13,8 @@ while True:
 
         img[y: y + h, x: x + w] = roi
         cv2.imshow(win_title, img)
+
     else:
         break
+
+cv2.destroyAllWindows()
