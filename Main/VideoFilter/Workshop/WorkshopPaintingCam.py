@@ -22,3 +22,6 @@ while cap.isOpened():
     sketch = cv2.erode(sketch, kernel)
     sketch = cv2.medianBlur(sketch, 5)
     img_sketch = cv2.cvtColor(sketch, cv2.COLOR_GRAY2BGR)
+
+    img_paint = cv2.blur(frame, (10, 10))
+    img_paint = cv2.bitwise_and(img_paint, img_paint, mask=sketch)
