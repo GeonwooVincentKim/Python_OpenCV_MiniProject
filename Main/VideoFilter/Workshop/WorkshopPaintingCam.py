@@ -12,3 +12,8 @@ while cap.isOpened():
 
     if cv2.waitKey(1) == 27:
         break
+
+    img_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    img_gray = cv2.GaussianBlur(img_gray, (9, 9), 0)
+    edges = cv2.Laplacian(img_gray, -1, None, 5)
+    ret, sketch = cv2.threshold(edges, 70, 255, cv2.THRESH_BINARY_INV)
