@@ -26,7 +26,7 @@ while cap.isOpened():
     img_paint = cv2.blur(frame, (10, 10))
     img_paint = cv2.bitwise_and(img_paint, img_paint, mask=sketch)
 
-    merged = np.hstack(img_sketch, img_paint, mask=sketch)
+    merged = np.hstack((img_sketch, img_paint))
     cv2.imshow("Sketch Camera", merged)
 
 
