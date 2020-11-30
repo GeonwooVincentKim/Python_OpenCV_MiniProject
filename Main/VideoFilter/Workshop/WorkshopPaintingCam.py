@@ -25,3 +25,6 @@ while cap.isOpened():
 
     img_paint = cv2.blur(frame, (10, 10))
     img_paint = cv2.bitwise_and(img_paint, img_paint, mask=sketch)
+
+cap.release()
+cv2.destroyAllWindows()
