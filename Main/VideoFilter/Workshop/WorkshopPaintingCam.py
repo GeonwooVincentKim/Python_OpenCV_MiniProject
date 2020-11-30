@@ -17,3 +17,8 @@ while cap.isOpened():
     img_gray = cv2.GaussianBlur(img_gray, (9, 9), 0)
     edges = cv2.Laplacian(img_gray, -1, None, 5)
     ret, sketch = cv2.threshold(edges, 70, 255, cv2.THRESH_BINARY_INV)
+
+    kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3))
+    sketch = cv2.erode(sketch, kernel)
+    sketch = cv2.medianBlur(sketch, 5)
+    img_sketch = cv2.cvtColor(sketch, cv2.COLOR_GRAY2BGR)
