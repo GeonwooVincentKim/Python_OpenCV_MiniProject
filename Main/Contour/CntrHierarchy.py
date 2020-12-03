@@ -32,3 +32,11 @@ cv2.drawContours(img, contour, -1, (0, 255, 0), 3)
 
 for idx, count in enumerate(contour2):
     color = [int(i) for i in np.random.randint(0, 255, 3)]
+    cv2.drawContours(img2, contour2, idx, color, 3)
+    cv2.putText(
+        img2,
+        str(idx),
+        tuple(count[0][0]),
+        cv2.FONT_HERSHEY_PLAIN,
+        1, (0, 0, 255)
+    )
