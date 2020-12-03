@@ -16,7 +16,7 @@ ret, imth_res = cv2.threshold(
     cv2.THRESH_BINARY_INV
 )
 
-im2, contour, hierarchy = cv2.findContours(
+contour, hierarchy = cv2.findContours(
     imth_res,
     cv2.RETR_TREE,
     cv2.CHAIN_APPROX_SIMPLE
@@ -24,7 +24,7 @@ im2, contour, hierarchy = cv2.findContours(
 
 print(len(contour), hierarchy)
 
-im2, contour2, hierarchy = cv2.findContours(
+contour2, hierarchy = cv2.findContours(
     imth_res,
     cv2.RETR_TREE,
     cv2.CHAIN_APPROX_SIMPLE
