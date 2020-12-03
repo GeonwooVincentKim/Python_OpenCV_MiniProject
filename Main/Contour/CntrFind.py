@@ -25,3 +25,7 @@ cv2.drawContours(img2, contour2, -1, (0, 255, 0), 4)
 for i in contour:
     for j in i:
         cv2.circle(img, tuple(j[0]), 1, (255, 0, 0), -1)
+
+for i in contour2:
+    for j in i:
+        cv2.circle(img, tuple(j[0]), 1, (255, 0, 0), -1)
