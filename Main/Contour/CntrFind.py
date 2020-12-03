@@ -18,4 +18,7 @@ img2, contour2, hierarchy = cv2.findContours(
     cv2.CHAIN_APPROX_SIMPLE
 )
 
+print('Number of Figure : %d {%d}' % (len(contour), len(contour2)))
+cv2.drawContours(img, contour, -1, (0, 255, 0), 4)
+cv2.drawContours(img2, contour2, -1, (0, 255, 0), 4)
 
