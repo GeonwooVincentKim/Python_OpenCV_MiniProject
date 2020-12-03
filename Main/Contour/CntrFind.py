@@ -29,3 +29,8 @@ for i in contour:
 for i in contour2:
     for j in i:
         cv2.circle(img, tuple(j[0]), 1, (255, 0, 0), -1)
+
+cv2.imshow("CHAIN_APPROX_NONE", img)
+cv2.imshow("CHAIN_APPROX_SIMPLE", img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
