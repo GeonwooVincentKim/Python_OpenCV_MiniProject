@@ -5,7 +5,11 @@ import numpy as np
 img = cv2.imread("../../img/shapes_donut.png")
 img2 = img.copy()
 
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img_gray = cv2.cvtColor(
+    img,
+    cv2.COLOR_BGR2GRAY
+)
+
 ret, imth_res = cv2.threshold(
     img_gray,
     127, 255,
@@ -40,3 +44,8 @@ for idx, count in enumerate(contour2):
         cv2.FONT_HERSHEY_PLAIN,
         1, (0, 0, 255)
     )
+
+cv2.imshow('RETR_EXTERNAL', img)
+cv2.imshow('RETR_TREE', img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
