@@ -12,6 +12,14 @@ ret, imth_res = cv2.threshold(
     cv2.THRESH_BINARY_INV
 )
 
+im2, contour, hierarchy = cv2.findContours(
+    imth_res,
+    cv2.RETR_TREE,
+    cv2.CHAIN_APPROX_SIMPLE
+)
+
+print(len(contour), hierarchy)
+
 im2, contour2, hierarchy = cv2.findContours(
     imth_res,
     cv2.RETR_TREE,
@@ -20,10 +28,7 @@ im2, contour2, hierarchy = cv2.findContours(
 
 print(len(contour2), hierarchy)
 
-im2, contour2, hierarchy = cv2.findContours(
-    imth_res,
-    cv2.RETR_TREE,
-    cv2.CHAIN_APPROX_SIMPLE
-)
+cv2.drawContours(img, contour, -1, (0, 255, 0), 3)
 
-print(len(contour2), hierarchy)
+for idx, count in enumerate(contour2):
+    color = [int(i) for i in np.random.randint(0, 255, 3)]
