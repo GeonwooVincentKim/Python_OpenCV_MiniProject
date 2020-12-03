@@ -22,3 +22,6 @@ print('Number of Figure : %d {%d}' % (len(contour), len(contour2)))
 cv2.drawContours(img, contour, -1, (0, 255, 0), 4)
 cv2.drawContours(img2, contour2, -1, (0, 255, 0), 4)
 
+for i in contour:
+    for j in i:
+        cv2.circle(img, tuple(j[0]), 1, (255, 0, 0), -1)
