@@ -19,3 +19,11 @@ im2, contour2, hierarchy = cv2.findContours(
 )
 
 print(len(contour2), hierarchy)
+
+im2, contour2, hierarchy = cv2.findContours(
+    imth_res,
+    cv2.RETR_TREE,
+    cv2.CHAIN_APPROX_SIMPLE
+)
+
+print(len(contour2), hierarchy)
