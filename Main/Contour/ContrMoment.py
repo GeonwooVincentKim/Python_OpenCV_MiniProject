@@ -10,3 +10,11 @@ img2, contours, hierachy = cv2.findContours(
     th, cv2.RETR_EXTERNAL,
     cv2.CHAIN_APPROX_SIMPLE
 )
+
+for c in contours:
+    mmt = cv2.moments(c)
+    cx = int(mmt['m10'] / mmt['m00'])
+    cy = int(mmt['m01'] / mmt['m00'])
+
+    a = mmt['m00']
+    l = cv2.arcLength(c, True)
