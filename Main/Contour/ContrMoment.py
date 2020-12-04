@@ -34,3 +34,8 @@ for c in contours:
     )
 
     print("area: %.2f" % cv2.contourArea(c, False))
+
+
+cv2.imshow("center", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
