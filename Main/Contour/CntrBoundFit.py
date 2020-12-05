@@ -62,5 +62,23 @@ cv2.ellipse(
     img,
     ellipse,
     (0, 255, 255),
-    3
+    3,
+)
+
+[vx, vy, x, y] = cv2.fitLine(
+    contr, cv2.DIST_L2,
+    0, 0.01, 0.01
+)
+cols, rows = img.shape[:2]
+cv2.line(
+    img,
+    (
+        0,
+        0 - x * (vy / vx) + y
+    ),
+    (
+        cols - 1,
+        (cols - x) * (vy / vx) + y
+    ),
+    (0, 0, 255), 2
 )
