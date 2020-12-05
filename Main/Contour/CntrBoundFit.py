@@ -19,3 +19,12 @@ im, contours, hr = cv2.findContours(
 )
 
 contr = contours[0]
+
+x, y, w, h = cv2.boundingRect(contr)
+cv2.rectangle(
+    img,
+    (x, y),
+    (x + w, y + h),
+    (0, 0, 0),
+    3
+)
