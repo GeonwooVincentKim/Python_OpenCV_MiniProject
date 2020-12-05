@@ -48,3 +48,19 @@ cv2.circle(
     (255, 0, 0),
     2
 )
+
+ret, tri = cv2.minEnclosingTriangle(contr)
+cv2.polylines(
+    img,
+    [np.int32(tri)],
+    True,
+    (255, 0, 255), 2
+)
+
+ellipse = cv2.fitEllipse(contr)
+cv2.ellipse(
+    img,
+    ellipse,
+    (0, 255, 255),
+    3
+)
