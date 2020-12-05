@@ -28,3 +28,23 @@ cv2.rectangle(
     (0, 0, 0),
     3
 )
+
+rect = cv2.minAreaRect(contr)
+box = cv2.boxPoints(rect)
+box = np.int0(box)
+cv2.drawContours(
+    img,
+    [box],
+    -1,
+    (0, 255, 0),
+    3
+)
+
+(x, y), radius = cv2.minEnclosingCircle(contr)
+cv2.circle(
+    img,
+    (int(x), int(y)),
+    int(radius),
+    (255, 0, 0),
+    2
+)
