@@ -13,7 +13,7 @@ ret, th = cv2.threshold(
     cv2.THRESH_BINARY_INV
 )
 
-im, contours, hr = cv2.findContours(
+contours, hr = cv2.findContours(
     th, cv2.RETR_EXTERNAL,
     cv2.CHAIN_APPROX_SIMPLE
 )
@@ -83,7 +83,6 @@ cv2.line(
     (0, 0, 255), 2
 )
 
-
-cv2.imshow("Bound Fit shapes" , img)
+cv2.imshow("Bound Fit shapes", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
