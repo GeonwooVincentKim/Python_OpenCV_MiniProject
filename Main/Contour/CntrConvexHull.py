@@ -64,3 +64,6 @@ for i in range(defects.shape[0]):
         )
 
 cv2.imshow("contour", img)
+cv2.imshow("convex hull", img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
