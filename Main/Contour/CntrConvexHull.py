@@ -10,3 +10,18 @@ ret, th = cv2.threshold(
     127, 255,
     cv2.THRESH_BINARY_INV
 )
+
+temp, contours, heiarchy = cv2.findContours(
+    th,
+    cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE
+)
+
+cntr = contours[0]
+cv2.drawContours(
+    img,
+    [cntr],
+    -1,
+    (0, 255, 0),
+    1
+)
