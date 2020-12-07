@@ -48,3 +48,8 @@ defects = cv2.convexityDefects(
     cntr,
     hull2
 )
+
+for i in range(defects.shape[0]):
+    startP, endP, farthestP, distance = defects[i, 0]
+    farthest = tuple(cntr[farthestP][0])
+    dist = distance / 256.0
