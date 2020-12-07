@@ -11,7 +11,7 @@ ret, th = cv2.threshold(
     cv2.THRESH_BINARY_INV
 )
 
-temp, contours, heiarchy = cv2.findContours(
+contours, heiarchy = cv2.findContours(
     th,
     cv2.RETR_EXTERNAL,
     cv2.CHAIN_APPROX_SIMPLE
