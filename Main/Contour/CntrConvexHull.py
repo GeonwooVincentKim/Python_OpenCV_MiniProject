@@ -25,3 +25,17 @@ cv2.drawContours(
     (0, 255, 0),
     1
 )
+
+hull = cv2.convexHull(cntr)
+cv2.drawContours(
+    img2,
+    [hull],
+    -1,
+    (0, 255, 0),
+    1
+)
+
+print(
+    cv2.isContourConvex(cntr),
+    cv2.isContourConvex(hull)
+)
