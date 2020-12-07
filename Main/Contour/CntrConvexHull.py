@@ -39,3 +39,12 @@ print(
     cv2.isContourConvex(cntr),
     cv2.isContourConvex(hull)
 )
+
+hull2 = cv2.convexHull(
+    cntr,
+    returnPoints=False
+)
+defects = cv2.convexityDefects(
+    cntr,
+    hull2
+)
