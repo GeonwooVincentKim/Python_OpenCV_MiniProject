@@ -53,3 +53,14 @@ for i in range(defects.shape[0]):
     startP, endP, farthestP, distance = defects[i, 0]
     farthest = tuple(cntr[farthestP][0])
     dist = distance / 256.0
+
+    if dist > 1:
+        cv2.circle(
+            img2,
+            farthest,
+            3,
+            (0, 0, 255),
+            -1
+        )
+
+cv2.imshow("contour", img)
