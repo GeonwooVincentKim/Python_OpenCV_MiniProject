@@ -45,3 +45,12 @@ for contr in cntrs_shapes:
         (0, 0, 255),
         1
     )
+
+matchs.sort(key=lambda x : x[0])
+cv2.drawContours(
+    shapes,
+    [matchs[0][1]],
+    -1,
+    (0, 255, 0),
+    3
+)
