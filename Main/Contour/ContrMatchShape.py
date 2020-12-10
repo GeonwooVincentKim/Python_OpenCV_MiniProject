@@ -54,3 +54,8 @@ cv2.drawContours(
     (0, 255, 0),
     3
 )
+
+cv2.imshow("target", target)
+cv2.imshow("Match Shape", shapes)
+cv2.waitKey()
+cv2.destroyAllWindows()
