@@ -22,3 +22,26 @@ _, cntrs_shapes, _ = cv2.findContours(
     cv2.RETR_EXTERNAL,
     cv2.CHAIN_APPROX_SIMPLE
 )
+
+matchs = []
+for contr in cntrs_shapes:
+    match = cv2.matchShapes(
+        cntrs_target[0],
+        contr,
+        cv2.CONTOURS_MATCH_I2,
+        0.0
+    )
+
+    matchs.append(
+        (match, contr)
+    )
+
+    cv2.putText(
+        shapes,
+        "%.2f" % match,
+        tuple(contr[0][0]),
+        cv2.FONT_HERSHEY_PLAIN,
+        1,
+        (0, 0, 255),
+        1
+    )
