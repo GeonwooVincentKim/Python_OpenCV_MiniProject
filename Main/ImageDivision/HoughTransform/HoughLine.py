@@ -23,8 +23,12 @@ for line in lines:
         -1
     )
 
-    x1, y1 = int(x0 + w * (-ty)), int(y0 + h * tx)
-    x2, y2 = int(x0 - w * (-ty)), int(y0 - h * tx)
+    x1, y1 = \
+        int(x0 + w * (-ty)), \
+        int(y0 + h * tx)
+    x2, y2 = \
+        int(x0 - w * (-ty)), \
+        int(y0 - h * tx)
 
     cv2.line(
         img2,
