@@ -33,3 +33,7 @@ for line in lines:
         (0, 255, 0),
         1
     )
+
+merged = np.hstack((img, img2))
+cv2.imshow("Houth Line", merged)
+cv2.destroyAllWindows()
