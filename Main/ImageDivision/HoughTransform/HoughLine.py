@@ -36,4 +36,5 @@ for line in lines:
 
 merged = np.hstack((img, img2))
 cv2.imshow("Houth Line", merged)
+cv2.waitKey()
 cv2.destroyAllWindows()
