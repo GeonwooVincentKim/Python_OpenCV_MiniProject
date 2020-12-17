@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-img = cv2.imread("../../../img/coins_spread1.jpg")
+img = cv2.imread("../../../img/coins_connected.jpg")
 gray = cv2.cvtColor(
     img,
     cv2.COLOR_BGR2GRAY
@@ -16,13 +16,13 @@ blur = cv2.GaussianBlur(
 circles = cv2.HoughCircles(
     blur,
     cv2.HOUGH_GRADIENT,
-    1, 5, 30,
+    1.5, 30,
     None,
     200
 )
 
 if circles is not None:
-    circles = np.uint16(np.arround(circles))
+    circles = np.uint16(np.around(circles))
     for i in circles[0, :]:
         cv2.circle(
             img,
