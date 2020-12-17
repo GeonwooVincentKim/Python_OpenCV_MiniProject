@@ -44,3 +44,8 @@ if circles is not None:
             (0, 0, 255),
             5
         )
+
+
+cv2.imshow("Hough Circle", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
