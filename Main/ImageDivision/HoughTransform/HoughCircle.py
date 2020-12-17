@@ -12,3 +12,11 @@ blur = cv2.GaussianBlur(
     (3, 3),
     0
 )
+
+circles = cv2.HoughCircles(
+    blur,
+    cv2.HOUGH_GRADIENT,
+    1, 5, 30,
+    None,
+    200
+)
