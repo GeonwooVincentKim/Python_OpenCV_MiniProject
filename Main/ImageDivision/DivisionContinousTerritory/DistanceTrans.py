@@ -8,3 +8,9 @@ bi_img = cv2.threshold(
     127, 255,
     cv2.THRESH_BINARY_INV
 )
+
+dst = cv2.distanceTransform(
+    bi_img,
+    cv2.DIST_L2,
+    5
+)
