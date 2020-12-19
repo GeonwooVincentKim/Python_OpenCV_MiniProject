@@ -31,3 +31,9 @@ skeleton = cv2.adaptiveThreshold(
     7,
     -3
 )
+
+cv2.imshow("origin", img)
+cv2.imshow("dist", dst)
+cv2.imshow("skeleton", skeleton)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
