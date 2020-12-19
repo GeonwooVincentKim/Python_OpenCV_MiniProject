@@ -14,3 +14,11 @@ dst = cv2.distanceTransform(
     cv2.DIST_L2,
     5
 )
+
+dst = dst / (
+    dst.max()
+    - dst.min()
+    * 255
+).astype(
+    np.uint8
+)
