@@ -22,3 +22,12 @@ dst = dst / (
 ).astype(
     np.uint8
 )
+
+skeleton = cv2.adaptiveThreshold(
+    dst,
+    255,
+    cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    cv2.THRESH_BINARY,
+    7,
+    -3
+)
