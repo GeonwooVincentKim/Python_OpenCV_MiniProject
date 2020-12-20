@@ -21,5 +21,12 @@ cnt, labels = cv2.connectedComponents(th)
 for i in range(cnt):
     img2[labels == i] = [
         int(j)
-        for j in np.random.randint(0, 255, 3)
+        for j in np.random.randint(
+            0, 255, 3
+        )
     ]
+
+cv2.imshow("origin", img)
+cv2.imshow("labeled", img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
