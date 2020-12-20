@@ -15,3 +15,11 @@ th = cv2.threshold(
     127, 255,
     cv2.THRESH_BINARY
 )
+
+cnt, labels = cv2.connectedComponents(th)
+
+for i in range(cnt):
+    img2[labels == i] = [
+        int(j)
+        for j in np.random.randint(0, 255, 3)
+    ]
