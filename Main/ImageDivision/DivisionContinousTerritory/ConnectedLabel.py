@@ -10,7 +10,7 @@ gray = cv2.cvtColor(
     cv2.COLOR_BGR2GRAY
 )
 
-th = cv2.threshold(
+_, th = cv2.threshold(
     gray,
     127, 255,
     cv2.THRESH_BINARY
