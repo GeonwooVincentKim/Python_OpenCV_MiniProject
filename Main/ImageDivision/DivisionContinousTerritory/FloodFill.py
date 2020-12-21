@@ -26,3 +26,9 @@ def onMouse(event, x, y, flags, param):
             loDiff, upDiff
         )
         cv2.imshow("img", img)
+
+
+cv2.imshow("img", img)
+cv2.setMouseCallback("img", onMouse)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
