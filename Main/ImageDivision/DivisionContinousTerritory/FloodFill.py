@@ -14,3 +14,15 @@ mask = np.zeros(
 
 newVal = (255, 255, 255)
 loDiff, upDiff = (10, 10, 10), (10, 10, 10)
+
+
+def onMouse(event, x, y, flags, param):
+    global mask, img
+    if event == cv2.EVENT_LBUTTONDOWN:
+        seed = (x, y)
+        retval = cv2.floodFill(
+            img, mask,
+            seed, newVal,
+            loDiff, upDiff
+        )
+        cv2.imshow("img", img)
