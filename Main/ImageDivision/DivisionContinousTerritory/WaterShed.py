@@ -43,3 +43,12 @@ def onMouse(event, x, y, flags, param):
         if isDragging:
             isDragging = False
             markerID += 1
+
+    elif event == cv2.EVENT_RBUTTONDOWN:
+        cv2.watershed(img, marker)
+        img_draw[marker == -1] = (0, 255, 0)
+
+        for mid, color in colors:
+            img_draw[marker == mid] = color
+
+        cv2.imshow("WaterShed", img_draw)
