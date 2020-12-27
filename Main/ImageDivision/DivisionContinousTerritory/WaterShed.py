@@ -38,3 +38,8 @@ def onMouse(event, x, y, flags, param):
                 (0, 0, 255),
                 -1
             )
+
+    elif event == cv2.EVENT_LBUTTONUP:
+        if isDragging:
+            isDragging = False
+            markerID += 1
