@@ -16,3 +16,7 @@ marker = np.zeros(
 markerID = 1
 colors = []
 isDragging = False
+
+
+def onMouse(event, x, y, flags, param):
+    global img_draw, marker, markerID, isDragging
