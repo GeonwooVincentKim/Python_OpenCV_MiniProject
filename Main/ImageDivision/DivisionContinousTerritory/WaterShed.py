@@ -27,3 +27,14 @@ def onMouse(event, x, y, flags, param):
             markerID,
             img[y, x]
         ))
+
+    elif event == cv2.EVENT_MOUSEMOVE:
+        if isDragging:
+            marker[y, x] = markerID
+            cv2.circle(
+                img_draw,
+                (x, y),
+                3,
+                (0, 0, 255),
+                -1
+            )
