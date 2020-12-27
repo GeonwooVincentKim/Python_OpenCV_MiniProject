@@ -52,3 +52,9 @@ def onMouse(event, x, y, flags, param):
             img_draw[marker == mid] = color
 
         cv2.imshow("WaterShed", img_draw)
+
+
+cv2.imshow("WaterShed", img)
+cv2.setMouseCallback("WaterShed", onMouse)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
