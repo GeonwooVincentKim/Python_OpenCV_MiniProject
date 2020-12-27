@@ -38,6 +38,7 @@ def onMouse(event, x, y, flags, param):
                 (0, 0, 255),
                 -1
             )
+            cv2.imshow("WaterShed", img_draw)
 
     elif event == cv2.EVENT_LBUTTONUP:
         if isDragging:
