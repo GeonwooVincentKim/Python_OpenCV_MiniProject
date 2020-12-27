@@ -20,3 +20,10 @@ isDragging = False
 
 def onMouse(event, x, y, flags, param):
     global img_draw, marker, markerID, isDragging
+
+    if event == cv2.EVENT_LBUTTONDOWN:
+        isDragging = True
+        colors.append((
+            markerID,
+            img[y, x]
+        ))
