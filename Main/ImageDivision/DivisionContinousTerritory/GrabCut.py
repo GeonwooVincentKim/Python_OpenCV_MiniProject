@@ -36,3 +36,22 @@ def onMouse(event, x, y, flags, param):
                 2
             )
             cv2.imshow("img", img_temp)
+
+        elif flags > 1:
+            mode = cv2.GC_INIT_WITH_MASK
+            if flags & cv2.EVENT_FLAG_CTRLKEY:
+                cv2.circle(
+                    img_draw,
+                    (x, y),
+                    3,
+                    (255, 255, 255),
+                    1
+                )
+                cv2.circle(
+                    mask,
+                    (x, y),
+                    3,
+                    cv2.GC_FGD,
+                    -1
+                )
+
