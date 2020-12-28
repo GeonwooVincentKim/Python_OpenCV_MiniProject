@@ -54,4 +54,22 @@ def onMouse(event, x, y, flags, param):
                     cv2.GC_FGD,
                     -1
                 )
+            if flags & cv2.EVENT_FLAG_SHIFTKEY:
+                cv2.circle(
+                    img_draw,
+                    (x, y),
+                    3,
+                    (0, 0, 0),
+                    -1
+                )
+                cv2.circle(
+                    mask,
+                    (x, y),
+                    cv2.GC_BGD,
+                    -1
+                )
+
+            cv2.imshow("img", img_draw)
+
+    elif event == cv2.EVENT_LBUTTONUP:
 
