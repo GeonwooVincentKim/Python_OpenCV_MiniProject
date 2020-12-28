@@ -107,3 +107,9 @@ def onMouse(event, x, y, flags, param):
 
 cv2.imshow("img", img)
 cv2.setMouseCallback("img", onMouse)
+
+while True:
+    if cv2.waitKey(0) & 0xFF == 27:
+        break
+
+cv2.destroyAllWindows()
