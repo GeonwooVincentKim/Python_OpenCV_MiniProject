@@ -21,3 +21,18 @@ def onMouse(event, x, y, flags, param):
         if flags <= 1:
             mode = cv2.GC_INIT_WITH_RECT
             rect[:2] = x, y
+
+    elif event == cv2.EVENT_MOUSEMOVE and flags & cv2.EVENT_FLAG_LBUTTON:
+        if mode == cv2.GC_INIT_WITH_RECT:
+            img_temp = img.copy()
+            cv2.rectangle(
+                img_temp,
+                (
+                    rect[0],
+                    rect[1]
+                ),
+                (x, y),
+                (0, 255, 0),
+                2
+            )
+            cv2.imshow("img", img_temp)
