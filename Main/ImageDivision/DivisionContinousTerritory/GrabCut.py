@@ -72,4 +72,17 @@ def onMouse(event, x, y, flags, param):
             cv2.imshow("img", img_draw)
 
     elif event == cv2.EVENT_LBUTTONUP:
+        if mode == cv2.GC_INIT_WITH_RECT:
+            rect[2:] = x, y
+            cv2.rectangle(
+                img_draw,
+                (
+                    rect[0],
+                    rect[1]
+                ),
+                (x, y),
+                (255, 0, 0),
+                2
+            )
+            cv2.imshow("img", img_draw)
 
