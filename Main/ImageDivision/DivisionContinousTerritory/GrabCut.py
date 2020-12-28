@@ -103,3 +103,7 @@ def onMouse(event, x, y, flags, param):
         ] = 0
         cv2.imshow("grab_cut", img2)
         mode = cv2.GC_EVAL
+
+
+cv2.imshow("img", img)
+cv2.setMouseCallback("img", onMouse)
