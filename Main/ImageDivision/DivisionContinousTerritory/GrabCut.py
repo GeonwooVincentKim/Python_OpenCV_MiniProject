@@ -11,8 +11,14 @@ mask = np.zeros(
 )
 rect = [0, 0, 0, 0]
 mode = cv2.GC_EVAL
-bgd_model = np.zeros((1, 65), np.float64)
-fgd_model = np.zeros((1, 65), np.float64)
+bgd_model = np.zeros(
+    (1, 65),
+    np.float64
+)
+fgd_model = np.zeros(
+    (1, 65),
+    np.float64
+)
 
 
 def onMouse(event, x, y, flags, param):
