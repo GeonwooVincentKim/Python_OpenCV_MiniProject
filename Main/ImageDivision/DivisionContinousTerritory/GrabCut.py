@@ -101,4 +101,5 @@ def onMouse(event, x, y, flags, param):
             (mask == cv2.GC_BGD) |
             (mask == cv2.GC_PR_BGD)
         ] = 0
-        cv2.imshow("grabcut", img2)
+        cv2.imshow("grab_cut", img2)
+        mode = cv2.GC_EVAL
