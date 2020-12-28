@@ -86,3 +86,19 @@ def onMouse(event, x, y, flags, param):
             )
             cv2.imshow("img", img_draw)
 
+        cv2.grabCut(
+            img,
+            mask,
+            tuple(rect),
+            bgd_model,
+            fgd_model,
+            1,
+            mode
+        )
+
+        img2 = img.copy()
+        img2[
+            (mask == cv2.GC_BGD) |
+            (mask == cv2.GC_PR_BGD)
+        ] = 0
+        cv2.imshow("grabcut", img2)
