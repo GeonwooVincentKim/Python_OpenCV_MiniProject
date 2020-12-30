@@ -23,3 +23,11 @@ def onChange(x):
             (img, mean)
         )
     )
+
+
+cv2.imshow(
+    "img",
+    np.hstack(
+        (img, img)
+    )
+)
