@@ -31,3 +31,9 @@ cv2.imshow(
         (img, img)
     )
 )
+
+cv2.createTrackbar('sp', 'img', 0, 100, onChange)
+cv2.createTrackbar('sr', 'img', 0, 100, onChange)
+cv2.createTrackbar('lv', 'img', 0, 5, onChange)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
