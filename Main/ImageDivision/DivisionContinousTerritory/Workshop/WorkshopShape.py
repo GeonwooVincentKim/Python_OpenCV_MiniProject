@@ -45,5 +45,13 @@ for contour in contours:
             name = 'Square'
             color = (0, 125, 255)
         else:
-            name = 'Square'
+            name = 'Rectangle'
             color = (0, 0, 255)
+
+    elif vertices == 10:
+        name = 'Star'
+        color = (255, 255, 0)
+
+    elif vertices >= 15:
+        name = 'Circle'
+        color = (0, 255, 255)
