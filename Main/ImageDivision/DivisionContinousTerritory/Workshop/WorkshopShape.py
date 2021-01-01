@@ -10,3 +10,21 @@ ret, th = cv2.threshold(
     127, 255,
     cv2.THRESH_BINARY_INV
 )
+
+_, contours, _ = cv2.findContours(
+    th,
+    cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE
+)
+
+for contour in contours:
+    approx = cv2.approxPolyDP(
+        contour,
+        0.01 * cv2.arcLength(
+            contour,
+            True
+        ),
+        True
+    )
+    vertices = len(approx)
+    print("Vertices: ", vertices)
