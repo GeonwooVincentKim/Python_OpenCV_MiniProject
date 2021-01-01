@@ -55,3 +55,24 @@ for contour in contours:
     elif vertices >= 15:
         name = 'Circle'
         color = (0, 255, 255)
+
+    cv2.drawContours(
+        img2,
+        [contour],
+        -1,
+        color,
+        -1
+    )
+
+    cv2.putText(
+        img2,
+        name,
+        (
+            cx - 50,
+            cy
+        ),
+        cv2.FONT_HERSHEY_COMPLEX_SMALL,
+        1,
+        (100, 100, 100),
+        1
+    )
