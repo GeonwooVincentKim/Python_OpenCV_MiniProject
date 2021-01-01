@@ -76,3 +76,9 @@ for contour in contours:
         (100, 100, 100),
         1
     )
+
+
+cv2.imshow("Input Shapes", img)
+cv2.imshow("Recognizing Shapes", img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
