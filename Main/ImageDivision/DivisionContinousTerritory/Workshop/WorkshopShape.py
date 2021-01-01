@@ -28,3 +28,10 @@ for contour in contours:
     )
     vertices = len(approx)
     print("Vertices: ", vertices)
+
+    mmt = cv2.moments(contour)
+    cx, cy = int(
+        mmt['m10'] / mmt['m00']
+    ), int(mmt['m01'] / mmt['m00'])
+
+    name = 'Unknown'
