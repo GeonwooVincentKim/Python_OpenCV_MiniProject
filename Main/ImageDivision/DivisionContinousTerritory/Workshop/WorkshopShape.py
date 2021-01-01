@@ -35,3 +35,15 @@ for contour in contours:
     ), int(mmt['m01'] / mmt['m00'])
 
     name = 'Unknown'
+    if vertices == 3:
+        name = 'Triangle'
+        color = (0, 255, 0)
+
+    elif vertices == 4:
+        x, y, w, h = cv2.boundingRect(contour)
+        if abs(w - h) <= 3:
+            name = 'Square'
+            color = (0, 125, 255)
+        else:
+            name = 'Square'
+            color = (0, 0, 255)
