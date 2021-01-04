@@ -88,3 +88,12 @@ pts2 = np.float32(
 )
 
 mtrx = cv2.getPerspectiveTransform(pts1, pts2)
+
+result = cv2.warpPerspective(
+    img,
+    mtrx,
+    (width, height)
+)
+cv2.imshow(win_name, result)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
