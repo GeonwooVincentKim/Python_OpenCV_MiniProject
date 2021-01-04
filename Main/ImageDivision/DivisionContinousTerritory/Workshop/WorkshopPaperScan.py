@@ -89,7 +89,10 @@ pts2 = np.float32(
     ]
 )
 
-mtrx = cv2.getPerspectiveTransform(pts1, pts2)
+mtrx = cv2.getPerspectiveTransform(
+    pts1,
+    pts2
+)
 
 result = cv2.warpPerspective(
     img,
