@@ -27,3 +27,20 @@ cv2.drawContours(
 )
 cv2.imshow(win_name, draw)
 cv2.waitKey(0)
+
+cnts = sorted(
+    cnts,
+    key=cv2.contourArea,
+    reverse=True
+)[:5]
+for c in cnts:
+    peri = cv2.arcLength(c, True)
+    vertices = cv2.approxPolyDP(
+        c,
+        0.02 * peri,
+        True
+    )
+    if len(vertices) == 4:
+        break
+
+pts = vertices.reshape(4, 2)
