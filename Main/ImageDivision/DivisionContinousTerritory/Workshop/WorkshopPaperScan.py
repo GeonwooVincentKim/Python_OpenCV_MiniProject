@@ -81,10 +81,12 @@ width = max([w1, w2])
 height = max([h1, h2])
 
 pts2 = np.float32(
-    [0, 0],
-    [width - 1, 0],
-    [width - 1, height - 1],
-    [0, height - 1]
+    [
+        [0, 0],
+        [width - 1, 0],
+        [width - 1, height - 1],
+        [0, height - 1]
+    ]
 )
 
 mtrx = cv2.getPerspectiveTransform(pts1, pts2)
