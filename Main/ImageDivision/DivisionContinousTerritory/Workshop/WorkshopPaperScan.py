@@ -56,3 +56,18 @@ for x, y in pts:
 cv2.imshow(win_name, draw)
 cv2.waitKey(0)
 merged = np.hstack((img, draw))
+
+sm = pts.sum(axis=1)
+diff = np.diff(pts, axis=1)
+
+topLeft = pts[np.argmin(sm)]
+bottomRight = pts[np.argmax(sm)]
+topRight = pts[np.argmin(diff)]
+bottomLeft = pts[np.argmax(diff)]
+
+pts1 = np.float32([
+    topLeft,
+    topRight,
+    bottomRight,
+    bottomLeft
+])
