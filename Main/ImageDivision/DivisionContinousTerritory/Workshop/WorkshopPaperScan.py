@@ -44,3 +44,15 @@ for c in cnts:
         break
 
 pts = vertices.reshape(4, 2)
+for x, y in pts:
+    cv2.circle(
+        draw,
+        (x, y),
+        10,
+        (0, 255, 0),
+        -1
+    )
+
+cv2.imshow(win_name, draw)
+cv2.waitKey(0)
+merged = np.hstack((img, draw))
