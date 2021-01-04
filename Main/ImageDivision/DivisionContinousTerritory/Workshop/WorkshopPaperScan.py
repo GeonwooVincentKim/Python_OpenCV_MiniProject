@@ -71,3 +71,20 @@ pts1 = np.float32([
     bottomRight,
     bottomLeft
 ])
+
+w1 = abs(bottomRight[0] - bottomLeft[0])
+w2 = abs(topRight[0] - topLeft[0])
+h1 = abs(topRight[1] - bottomRight[1])
+h2 = abs(topLeft[1] - bottomLeft[1])
+
+width = max([w1, w2])
+height = max([h1, h2])
+
+pts2 = np.float32(
+    [0, 0],
+    [width - 1, 0],
+    [width - 1, height - 1],
+    [0, height - 1]
+)
+
+mtrx = cv2.getPerspectiveTransform(pts1, pts2)
