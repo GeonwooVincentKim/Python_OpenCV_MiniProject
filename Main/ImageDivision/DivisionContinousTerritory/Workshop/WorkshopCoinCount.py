@@ -84,7 +84,7 @@ dst = (
 ).astype(np.uint8)
 cv2.imshow("dst2", dst)
 
-ret, sure_fg = cv2.threshold(
+sure_fg = cv2.threshold(
     dst,
     0.5 * dst.max(),
     255,
@@ -118,3 +118,13 @@ sure_bg = cv2.threshold(
     cv2.THRESH_BINARY
 )
 cv2.imshow("sure_bg", sure_bg)
+
+inv_sure_bg = cv2.threshold(
+    sure_bg,
+    127, 255,
+    cv2.THRESH_BINARY_INV
+)
+unknown = cv2.subtract(
+    inv_sure_bg, sure_fg
+)
+cv2.imshow("unknown", unknown)
