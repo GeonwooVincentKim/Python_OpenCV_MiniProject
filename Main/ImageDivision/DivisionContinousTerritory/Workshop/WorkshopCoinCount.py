@@ -84,7 +84,7 @@ dst = (
 ).astype(np.uint8)
 cv2.imshow("dst2", dst)
 
-sure_fg = cv2.threshold(
+ret, sure_fg = cv2.threshold(
     dst,
     0.5 * dst.max(),
     255,
@@ -92,6 +92,7 @@ sure_fg = cv2.threshold(
 )
 cv2.imshow("sure_fg", sure_fg)
 
+# Error occurs
 _, bg_th = cv2.threshold(
     dst,
     0.3 * dst.max(),
@@ -106,11 +107,12 @@ bg_dst = cv2.distanceTransform(
 bg_dst = (
     (
         bg_dst / (
-            bg_dst.max() - bg.dst.min()
+            bg_dst.max() - bg_dst.min()
         )
     ) * 255
 ).astype(np.uint8)
 
+# Error Occurs..
 sure_bg = cv2.threshold(
     bg_dst,
     0.3 * bg_dst.max(),
@@ -128,3 +130,28 @@ unknown = cv2.subtract(
     inv_sure_bg, sure_fg
 )
 cv2.imshow("unknown", unknown)
+
+_, markers = cv2.connectedComponents(sure_fg)
+
+markers += markers
+markers[unknown == 255] = 0
+print("WaterShed Sun", np.unique(markers))
+
+colors = []
+marker_show = np.zeros_like(img)
+
+for mid in np.unique(markers):
+    color = [int(j) for j in np.random.randint(0, 255, 3)]
+    colors.append((mid, color))
+    marker_show[markers == mid] = color
+    coords = np.where(markers == mid)
+    x, y = coords[1][0], coords[0][0]
+    cv2.putText(
+        marker_show,
+        str(mid),
+        (x + 20, y + 20),
+        cv2.FONT_HERSHEY_PLAIN,
+        2,
+        (255, 255, 255)
+    )
+cv2.imshow("before", marker_show)
