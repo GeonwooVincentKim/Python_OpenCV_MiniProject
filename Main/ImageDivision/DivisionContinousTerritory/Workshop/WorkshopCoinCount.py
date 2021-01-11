@@ -28,3 +28,14 @@ dst = (
         * 255
 ).astype(np.uint8)
 cv2.imshow("dst", dst)
+
+localMx = cv2.dilate(
+    dst,
+    np.ones(
+        (50, 50),
+        np.uint8
+    )
+)
+lm = np.zeros((rows, cols), np.uint8)
+lm[(localMx == dst) & (dst != 0)] = 255
+cv2.imshow("localMx", lm)
