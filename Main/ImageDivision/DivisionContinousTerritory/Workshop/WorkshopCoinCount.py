@@ -24,7 +24,10 @@ dst = cv2.distanceTransform(
 )
 dst = (
         dst /
-        (dst.max() - dst.min())
+        (
+                dst.max()
+                - dst.min()
+        )
         * 255
 ).astype(np.uint8)
 cv2.imshow("dst", dst)
@@ -77,7 +80,8 @@ dst = cv2.distanceTransform(
 dst = (
     (
         dst / (
-            dst.max() - dst.min()
+            dst.max()
+            - dst.min()
         )
     )
     * 255
@@ -107,7 +111,8 @@ bg_dst = cv2.distanceTransform(
 bg_dst = (
     (
         bg_dst / (
-            bg_dst.max() - bg_dst.min()
+            bg_dst.max()
+            - bg_dst.min()
         )
     ) * 255
 ).astype(np.uint8)
@@ -127,7 +132,8 @@ ret, inv_sure_bg = cv2.threshold(
     cv2.THRESH_BINARY_INV
 )
 unknown = cv2.subtract(
-    inv_sure_bg, sure_fg
+    inv_sure_bg,
+    sure_fg
 )
 cv2.imshow("unknown", unknown)
 
