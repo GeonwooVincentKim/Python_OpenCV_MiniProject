@@ -198,7 +198,11 @@ for i, label in enumerate(coin_label):
     x, y, w, h = cv2.boundingRect(contour[0])
     coin = coins[y: y + h, x: x + w]
     cv2.imshow("coin %d" % (i + 1), coin)
-    cv2.imwrite("../../../../img/coin_test/coin%d.jpg" % (i + 1), coin)
+    cv2.imwrite(
+        "../../../../img/"
+        "coin_test/coin%d.jpg"
+        % (i + 1), coin
+    )
 
 cv2.waitKey()
 cv2.destroyAllWindows()
