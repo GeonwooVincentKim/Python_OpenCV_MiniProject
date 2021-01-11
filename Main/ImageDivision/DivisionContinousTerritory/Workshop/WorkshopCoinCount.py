@@ -155,3 +155,25 @@ for mid in np.unique(markers):
         (255, 255, 255)
     )
 cv2.imshow("before", marker_show)
+
+markers = cv2.watershed(img, markers)
+print("After WaterShed: ", np.unique(markers))
+
+for mid, color in colors:
+    marker_show[markers == mid] = color
+    coords = np.where(markers == mid)
+
+    if coords[0].size <= 0:
+        continue
+    x, y = coords[1][0], coords[0][0]
+    cv2.putText(
+        marker_show,
+        str(mid),
+        (x + 20, y + 20),
+        cv2.FONT_HERSHEY_PLAIN,
+        2,
+        (255, 255, 255)
+    )
+
+marker_show[markers == 1] = (0, 255, 0)
+cv2.imshow("WaterShed", img)
