@@ -63,3 +63,23 @@ for x, y, in seed:
 
 gray = cv2.cvtColor(mean, cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+ret , thresh = cv2.threshold(
+    gray,
+    0, 255,
+    cv2.THRESH_BINARY | cv2.THRESH_OTSU
+)
+dst = cv2.distanceTransform(
+    thresh,
+    cv2.DIST_L2,
+    5
+)
+dst = (
+    (
+        dst / (
+            dst.max() - dst.min()
+        )
+    )
+    * 255
+).astype(np.uint8)
+cv2.imshow("dst2", dst)
