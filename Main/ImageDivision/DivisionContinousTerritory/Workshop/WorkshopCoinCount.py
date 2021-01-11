@@ -83,3 +83,38 @@ dst = (
     * 255
 ).astype(np.uint8)
 cv2.imshow("dst2", dst)
+
+ret, sure_fg = cv2.threshold(
+    dst,
+    0.5 * dst.max(),
+    255,
+    0
+)
+cv2.imshow("sure_fg", sure_fg)
+
+_, bg_th = cv2.threshold(
+    dst,
+    0.3 * dst.max(),
+    255,
+    cv2.THRESH_BINARY_INV
+)
+bg_dst = cv2.distanceTransform(
+    bg_th,
+    cv2.DIST_L2,
+    5
+)
+bg_dst = (
+    (
+        bg_dst / (
+            bg_dst.max() - bg.dst.min()
+        )
+    ) * 255
+).astype(np.uint8)
+
+sure_bg = cv2.threshold(
+    bg_dst,
+    0.3 * bg_dst.max(),
+    255,
+    cv2.THRESH_BINARY
+)
+cv2.imshow("sure_bg", sure_bg)
