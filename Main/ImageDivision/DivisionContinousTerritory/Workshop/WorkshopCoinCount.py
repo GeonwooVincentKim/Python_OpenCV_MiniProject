@@ -86,7 +86,7 @@ cv2.imshow("dst2", dst)
 
 ret, sure_fg = cv2.threshold(
     dst,
-    0.5 * dst.max(),
+    0.5*dst.max(),
     255,
     0
 )
@@ -113,7 +113,7 @@ bg_dst = (
 ).astype(np.uint8)
 
 # Error Occurs..
-sure_bg = cv2.threshold(
+ret, sure_bg = cv2.threshold(
     bg_dst,
     0.3 * bg_dst.max(),
     255,
@@ -121,7 +121,7 @@ sure_bg = cv2.threshold(
 )
 cv2.imshow("sure_bg", sure_bg)
 
-inv_sure_bg = cv2.threshold(
+ret, inv_sure_bg = cv2.threshold(
     sure_bg,
     127, 255,
     cv2.THRESH_BINARY_INV
@@ -189,7 +189,7 @@ for i, label in enumerate(coin_label):
     mask[:, :] = 0
     mask[markers == label] = 255
     coins = cv2.bitwise_and(img, img, mask=mask)
-    _, contour, _ = cv2.findContours(
+    contour, _ = cv2.findContours(
         mask,
         cv2.RETR_EXTERNAL,
         cv2.CHAIN_APPROX_NONE
