@@ -39,3 +39,27 @@ localMx = cv2.dilate(
 lm = np.zeros((rows, cols), np.uint8)
 lm[(localMx == dst) & (dst != 0)] = 255
 cv2.imshow("localMx", lm)
+
+seeds = np.where(lm == 255)
+seed = np.stack(
+    (seeds[1], seeds[0]),
+    axis=-1
+)
+fill_mask = np.zeros((
+    rows + 2,
+    cols + 2
+), np.uint8)
+
+for x, y, in seed:
+    ret = cv2.floodFill(
+        mean,
+        fill_mask,
+        (x, y),
+        (255, 255, 255),
+        (10, 10, 10),
+        (10, 10, 10)
+    )
+    cv2.imshow("floodFill", mean)
+
+gray = cv2.cvtColor(mean, cv2.COLOR_BGR2GRAY)
+gray = cv2.GaussianBlur(gray, (5, 5), 0)
