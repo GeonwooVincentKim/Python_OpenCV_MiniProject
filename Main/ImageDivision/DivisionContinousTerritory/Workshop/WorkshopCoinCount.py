@@ -177,3 +177,28 @@ for mid, color in colors:
 
 marker_show[markers == 1] = (0, 255, 0)
 cv2.imshow("WaterShed", img)
+
+mask = np.zeros((rows, cols), np.uint8)
+nobg = cv2.bitwise_and(img, img, mask=mask)
+coin_label = [
+    l for l in np.unique(markers)
+    if(l != 1 and 1 != -1)
+]
+
+for i, label in enumerate(coin_label):
+    mask[:, :] = 0
+    mask[markers == label] = 255
+    coins = cv2.bitwise_and(img, img, mask=mask)
+    _, contour, _ = cv2.findContours(
+        mask,
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_NONE
+    )
+
+    x, y, w, h = cv2.boundingRect(contour[0])
+    coin = coins[y: y + h, x: x + w]
+    cv2.imshow("coin %d" % (i + 1), coin)
+    cv2.imwrite("../../../../img/coin_test/coin%d.jpg" % (i + 1), coin)
+
+cv2.waitKey()
+cv2.destroyAllWindows()
