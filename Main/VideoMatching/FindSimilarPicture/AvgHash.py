@@ -17,3 +17,6 @@ for row in bin.tolist():
 
 d_hash = ''.join(d_hash)
 print(d_hash)
+
+cv2.imshow("pistol", img)
+cv2.waitKey(0)
