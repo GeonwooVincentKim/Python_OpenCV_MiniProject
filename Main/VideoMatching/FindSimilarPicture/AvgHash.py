@@ -9,3 +9,11 @@ avg = gray.mean()
 
 bin = 1 * (gray > avg)
 print(bin)
+
+d_hash = []
+for row in bin.tolist():
+    s = ''.join([str(i) for i in row])
+    d_hash.append("%02x" % (int(s, 2)))
+
+d_hash = ''.join(d_hash)
+print(d_hash)
