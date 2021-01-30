@@ -33,3 +33,8 @@ for path in img_path:
     cv2.waitKey(5)
 
     a_hash = img2hash(img)
+    dst = hamming_distance(query_hash, a_hash)
+
+    if dst / 256 < 0.25:
+        print(path, dst / 256)
+        cv2.imshow(path, img)
