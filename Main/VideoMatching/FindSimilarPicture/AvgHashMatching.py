@@ -25,3 +25,11 @@ def hamming_distance(a, b):
 
 
 query_hash = img2hash(img)
+
+img_path = glob.glob(search_dir+'/**/**/**/*.jpg')
+for path in img_path:
+    img = cv2.imread(path)
+    cv2.imshow("searching..", img)
+    cv2.waitKey(5)
+
+    a_hash = img2hash(img)
