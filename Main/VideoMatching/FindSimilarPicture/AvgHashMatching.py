@@ -38,3 +38,7 @@ for path in img_path:
     if dst / 256 < 0.25:
         print(path, dst / 256)
         cv2.imshow(path, img)
+
+cv2.destroyWindow("searching...")
+cv2.waitKey(0)
+cv2.destroyAllWindows()
