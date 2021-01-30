@@ -15,3 +15,10 @@ def img2hash(img):
     avg = gray.mean()
     bi = 1 * (gray > avg)
     return bi
+
+
+def hamming_distance(a, b):
+    a = a.reshape(1, -1)
+    b = b.reshape(1, -1)
+    distance = (a != b).sum()
+    return distance
