@@ -22,3 +22,6 @@ def hamming_distance(a, b):
     b = b.reshape(1, -1)
     distance = (a != b).sum()
     return distance
+
+
+query_hash = img2hash(img)
