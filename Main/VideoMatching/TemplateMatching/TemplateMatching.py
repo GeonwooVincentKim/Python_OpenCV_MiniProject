@@ -12,3 +12,16 @@ methods = [
     'cv2.TM_CCORR_NORMED',
     'cv2.TM_SQDIFF_NORMED'
 ]
+
+for i, method_name in enumerate(methods):
+    img_draw = img.copy()
+    method = eval(method_name)
+    res = cv2.matchTemplate(img, template, method)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+    print(
+        method_name,
+        min_val,
+        max_val,
+        min_loc,
+        max_loc
+    )
