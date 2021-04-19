@@ -32,3 +32,29 @@ for i, method_name in enumerate(methods):
     else:
         top_left = max_loc
         match_val = max_val
+
+    bottom_right = (
+        top_left[0] + tw,
+        top_left[1] + th
+    )
+    cv2.rectangle(
+        img_draw,
+        top_left,
+        bottom_right,
+        (0, 0, 255),
+        2
+    )
+    cv2.putText(
+        img_draw,
+        str(match_val),
+        top_left,
+        cv2.FONT_HERSHEY_PLAIN,
+        2,
+        (0, 255, 0),
+        1,
+        cv2.LINE_AA
+    )
+    cv2.imshow(method_name, img_draw)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
