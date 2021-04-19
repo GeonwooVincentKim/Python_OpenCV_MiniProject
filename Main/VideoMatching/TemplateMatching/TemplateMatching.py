@@ -25,3 +25,10 @@ for i, method_name in enumerate(methods):
         min_loc,
         max_loc
     )
+
+    if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+        top_left = min_loc
+        match_val = min_val
+    else:
+        top_left = max_loc
+        match_val = max_val
