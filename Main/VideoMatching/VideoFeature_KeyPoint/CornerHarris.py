@@ -31,3 +31,6 @@ corner_norm = cv2.cvtColor(
     cv2.COLOR_GRAY2BGR
 )
 merged = np.hstack((corner_norm, img))
+cv2.imshow("Harris Corner", merged)
+cv2.waitKey()
+cv2.destroyAllWindows()
